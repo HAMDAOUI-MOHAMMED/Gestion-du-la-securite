@@ -1,0 +1,35 @@
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock title %} 
+
+{% block contenu %}
+
+<div class="row d-flex align-items-center">
+  <div class="col-lg-7 col-md-9">
+    <div class="hero__caption">
+      <h1 data-animation="fadeInLeft" data-delay=".4s">
+        Gestion<br />
+        de la sécurite
+      </h1>
+      <p data-animation="fadeInLeft" data-delay=".6s">
+        Dans notre application web ont se concentré à présenter le projet
+        gestion de la sécurite, les défferente ettapes d'analyse et aussi la
+        simulation des algorithmes appliquer.
+      </p>
+      <!-- Hero-btn -->
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div
+      class="hero__img d-none d-lg-block"
+      data-animation="fadeInRight"
+      data-delay="1s"
+    >
+      <img src="{% static 'assets/img/hero/hero_right.svg' %}" alt="" />
+    </div>
+  </div>
+</div>
+
+{% endblock contenu %}

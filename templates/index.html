@@ -1,0 +1,288 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets\img\logo.ico' %}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'assets\img\logo\logo.svg' %}" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent ">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="{% url 'Accueil:accueil'%}"><img id="logo-header" src="{% static 'assets\img\logo\logo.png' %}"
+                                        alt="logo-header"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{% url 'Accueil:accueil'%}">Accueil</a></li>
+
+                                        <li><a href="#">DateSet</a>
+                                         
+                                                <ul class="submenu">
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">KDD-99</span>
+                                                            <span class="svg-a">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        {% comment %} onmouseover="disable('nslkdd')" onmouseout="enable('nslkdd')" {% endcomment %}
+                                                        <ul class="submenu">
+                                                           <li><a href="#">test data</a></li>
+                                                            <li><a href="#">training data</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">NSL-KDD</span>
+                                                            <span class="svg-b">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                           <li><a href="#">test data</a></li>
+                                                            <li><a href="#">training data</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% comment %} <li id="nslkdd"><a href="{% url 'nslKdd:nslkdd'%}">NSL-KDD</a></li> {% endcomment %}
+                                                </ul>
+                                        </li>
+                                        <li><a href="{% url 'KDD99:kdd99'%}">Prétraitement</a>
+                                            <ul class="submenu">
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">KDD-99</span>
+                                                            <span class="svg-a">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        {% comment %} onmouseover="disable('nslkdd')" onmouseout="enable('nslkdd')" {% endcomment %}
+                                                        <ul class="submenu">
+                                                           <li><a href="#">Nettoyage</a></li>
+                                                            <li><a href="#">Numerisation</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">NSL-KDD</span>
+                                                            <span class="svg-b">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                           <li><a href="#">Nettoyage</a></li>
+                                                            <li><a href="#">Numerisation</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% comment %} <li id="nslkdd"><a href="{% url 'nslKdd:nslkdd'%}">NSL-KDD</a></li> {% endcomment %}
+                                                </ul>
+                                        </li>
+                                        <li><a href="Classification.html">Classification</a>
+                                        <ul class="submenu">
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">KDD-99</span>
+                                                            <span class="svg-a">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        {% comment %} onmouseover="disable('nslkdd')" onmouseout="enable('nslkdd')" {% endcomment %}
+                                                        <ul class="submenu">
+                                                           <li><a href="#">Random-forest</a></li>
+                                                            <li><a href="#">SVM</a></li>
+                                                            <li><a href="#">KNN</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="dropdown-submenu bi bi-caret-right listmn" >
+                                                        <a href="#" data-toggle="dropdown" role="buttons" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="nav-label">NSL-KDD</span>
+                                                            <span class="svg-b">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#">Random-forest</a></li>
+                                                            <li><a href="#">SVM</a></li>
+                                                            <li><a href="#">KNN</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% comment %} <li id="nslkdd"><a href="{% url 'nslKdd:nslkdd'%}">NSL-KDD</a></li> {% endcomment %}
+                                                </ul>
+                                        </li>
+                                        <li><a href="Classification.html">Pérformance</a>
+                                        <ul class="submenu">
+                                                <li><a href="#">KDD-99</a></li>
+                                                <li><a href="#">NSL-KDD</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="GDR.html">Gestion de Risque</a>
+                                        
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+    </header>
+
+    <main>
+
+        <!-- Slider Area Start-->
+        <div class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center"
+                    data-background="{% static 'assets/img/hero/h1_hero.png' %}">
+                    <div class="container">
+                        {% block contenu %}{% endblock contenu %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+
+
+        <!-- footer-bottom aera -->
+        <div class="footer-bottom-area footer-bg">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 ">
+                            <div class="footer-copy-right text-center">
+                                <p>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>document.write(new Date().getFullYear());</script> All rights reserved
+                    
+
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Footer End-->
+
+    </footer>
+
+    <!-- JS here -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static 'assets/js/jquery.slicknav.min.js' %}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <!-- Date Picker -->
+    <script src="{% static 'assets/js/gijgo.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/animated.headline.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+
+    <!-- contact js -->
+    <script src="{% static 'assets/js/contact.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.form.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/mail-script.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    {% comment %} <script>
+function disable(x) {
+    document.getElementById(x).style.display='none';
+}
+
+function enable(x) {
+    document.getElementById(x).style.display='block';
+}
+</script> {% endcomment %}
+
+</body>
+
+</html>

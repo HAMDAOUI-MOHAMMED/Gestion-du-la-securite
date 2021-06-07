@@ -1,0 +1,263 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}NSL KDD{% endblock title %} 
+
+{% block contenu %}
+    <!-- Slider Area Start-->
+
+            <!-- Section-tittle -->
+            <div class="row d-flex justify-content-center mt-100">
+                <div class="col-lg-8">
+                    <div class="section-tittle text-center mt-60 mb-60">
+                        <h2>NSL-KDD​</h2>
+                    </div>
+                </div>
+            </div>
+    <!-- Slider Area End-->
+
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-paddingr">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item bg-light shadow">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Les donnees de training</h2>   
+                                <div class="m-2 scroll_bar">
+                                {{traindata | safe }}
+                                </div>
+                                
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Les donnees de teste</h2>
+                                    
+                                <div class="m-2 scroll_bar">
+                                {{testdata | safe }}
+                                </div>
+                                
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Les dimensions</h2>
+                                    
+                                <div class="m-2 ">
+                                <p>la taille de data training : {{shaptrdata}}</p>
+                                <p>la taille de data testing : {{shaptsdata}}</p>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Verfication des donnees de training</h2>
+                                    
+                                <div class="m-2">
+                                {% for msg in vrftraindata %}
+                                <p class="fs-5">{{msg}}</p>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Verfication des donnees de testing</h2>
+                                <div class="m-2">
+                                {% for msg in vrftestdata %}
+                                <p class="fs-5">{{msg}}</p>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                <h2 class="d-inline-block m-1">les colonnes avec des valeurs qualitative</h2>
+                                <br>
+                                <br>
+
+                                <p class="fw-bold-1" style="font-size: 20px; color:rgb(100, 6, 53)">training data</p>
+                                <div class="m-2">
+                                {% for msg in qctrdata %}
+                                <p class="fs-5">{{msg}}</p>
+                                {% endfor %}
+                                </div>
+                                <p  style="font-size: 20px; color:rgb(100, 6, 53)">testing data</p>
+                                    
+                                <div class="m-2">
+                                {% for msg in qctsdata %}
+                                <p class="fs-5">{{msg}}</p>
+                                {% endfor %}
+                                </div>
+                                <p><b>Remarque:</b>
+                                On peut remarquer une difference entre les deux dataframe dans les deux colonnes (service et attack)</p>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Visualisation des donnees de colonne attack</h2>
+                                <div class="m-2">
+                                <img src="{% static imgtrdata %}" class="img-fluid">
+                                </div>
+                                <div class="m-2">
+                                <img src="{% static imgtsdata %}" class="img-fluid">
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Numérisation</h2>
+                            <p class="fw-normal" >Determiner les caracteristiques symbolique</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data</p>
+                                <div class="m-2 scroll_bar" style="text-align: center;">
+                                {{trsymbcl| safe }}
+                                </div>
+                                <br/>
+                                <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data</p>
+                                <div class="m-2 scroll_bar">
+                                {{trsymbcl| safe }}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Numérisation</h2>
+                            <p  class="fw-normal">Application LabelEncoder</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data</p>
+                                <div class="m-2 scroll_bar">
+                                {{df_train_LbEn|safe}}
+                                </div>
+                                <br/>
+                                <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data</p>
+                                <div class="m-2 scroll_bar ">
+                                {{df_test_LbEn|safe}}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Normalisation</h2>
+                            <p class="fw-normal">Application OneHotEncoder</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data <small>{{dftrOneEnc}}</small></p> 
+                                <div class="m-2 scroll_bar">
+                                {{df_train_OneEnc|safe}}
+                                </div>
+                                <br/>
+                                <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data <small> {{dftsOneEnc}}</small></p> 
+                                <div class="m-2 scroll_bar ">
+                                {{df_test_OneEnc|safe}}
+                                </div>
+                                <p><b>Remarque:</b>
+                                d'apres la visualisation des donnees on peut remarque qu'il y un manquant
+                                de quelque valeur entre les deux dataframe</p>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Equilibrage des dataframes</h2>
+                            <p  class="fw-normal">la list des differences entre les 2 Database</p>
+                                <div class="m-2 ">
+                                {% for d in diff_list %}
+                                <p>{{d}}</p>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Equilibrage des dataframes</h2>
+                            <p  class="fw-normal">Ajouter les colonnes manquant dans les deux databases</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data <small>{{dftrOneEnc}}</small></p> 
+                                <div class="m-2 scroll_bar">
+                                {{df_train_OneEnc|safe}}
+                                </div>
+                                <br/>
+                                <p  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data <small> {{dftsOneEnc_copy}}</small></p> 
+                                <div class="m-2 scroll_bar ">
+                                {{df_test_OneEnc_copy|safe}}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">jointure des donnees</h2>
+                            <p  class="fw-normal">Ajouter les 2 databases avec eu</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data <small>{{df_train_new_shape}}</small></p> 
+                                <div class="m-2 scroll_bar">
+                                {{df_train_new|safe}}
+                                </div>
+                                <br/>
+                                <p  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data <small> {{df_test_new_shape}}</small></p> 
+                                <div class="m-2 scroll_bar ">
+                                {{df_test_new|safe}}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Nettoyage</h2>
+                            <p class="fw-normal">suppression des 3 colonne type protocol,service,flag</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data <small>{{df_train_new_final_shape}}</small></p> 
+                                <div class="m-2 scroll_bar">
+                                {{df_train_new_final|safe}}
+                                </div>
+                                <br/>
+                                <p  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data <small> {{df_test_new_final_shape}}</small></p> 
+                                <div class="m-2 scroll_bar ">
+                                {{df_test_new_final|safe}}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                            <h2 class="d-inline-block m-1">Traitement à propos colonnes des attacks</h2>
+                            <p  class="fw-normal">Convertion les type des attacks vers numirique</p>
+                            <p  class="fw-normal"  style="font-size: 20px; color:rgb(100, 6, 53)">Training data <small>{{df_Attack_train_update_shape}}</small></p> 
+                                <div class="m-2 scroll_bar">
+                                {{df_Attack_train_update|safe}}
+                                </div>
+                                <br/>
+                                <p  style="font-size: 20px; color:rgb(100, 6, 53)">Testing data <small> {{df_Attack_test_update_shape}}</small></p> 
+                                <div class="m-2 scroll_bar ">
+                                {{df_Attack_test_update|safe}}
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog_item bg-light shadow rounded-3">
+                            
+                            <div class="blog_details">
+                                    <h2 class="d-inline-block m-1">Visualisation des donnees de colonne attack</h2>
+                                <div class="m-2">
+                                <img src="{% static imgtrattack %}" class="img-fluid rounded mx-auto d-block">
+                                </div>
+                                <div class="m-2">
+                                <img src="{% static imgtsattack %}" class="img-fluid rounded mx-auto d-block">
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock contenu %}
